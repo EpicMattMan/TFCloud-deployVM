@@ -63,7 +63,7 @@ resource "azurerm_network_interface" "nic1" {
 
 #Create Boot Diagnostic Account
 resource "azurerm_storage_account" "sa" {
-  name                     = "tfc-diagnostic-store1" 
+  name                     = "tfcdiagnosticstore1191" 
   resource_group_name      = azurerm_resource_group.rg.name  
   location                 = azurerm_resource_group.rg.location
    account_tier            = "Standard"
