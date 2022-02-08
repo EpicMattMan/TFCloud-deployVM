@@ -1,11 +1,20 @@
 #create resource groups
-resource "azurerm_resource_group" "rg" {
-  name     = "AwesomeRG-2"                      // value from iteration
-  location = "canadacentral"
+
+provider "azurerm" {
+  version =  "2.66.0"
   
-   tags = {
-       environment = "TFC test"
-   }
+  subscription_id = var.subscription_id
+  client_id = var.client_id
+  client_secret = var.clientSecret
+  tenant_id = var.tenant_id
+  
+  features{}
+  
+}
+
+resource "azurerm_resource_group" "rg" {
+  name =var.rgName
+  location = var.location
 }
 
 # Create virtual network
